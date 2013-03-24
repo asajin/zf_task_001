@@ -33,7 +33,27 @@ class Common_Parser_Csv
      */
     public function process()
     {
-
+        $header = array();
+        $list   = array();
+        if(file_exists($this->file)) {
+            if (($handle = fopen($this->file, "r")) !== FALSE) {
+                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                    if(count($data) == 3) {
+                        if(empty($header)) {
+                            $header = $data;
+                        } else {
+                            $list[$data[1]] = $data;
+                        }
+                    } else {
+                        $this->error = 'Not accepted format of file';
+                    }
+                }
+                ksort($list);
+                fclose($handle);
+            }
+        }
+        
+        return array($header, $list);
     }
     
     /**
