@@ -21,7 +21,6 @@ class Application_Form_Import extends Zend_Form
         
         $this->addElement('file', 'file', array(
             'label'      => 'File to import:',
-            'destination'=> APPLICATION_PATH .'/../data/uploads',
             'required'   => true
         ));
         
