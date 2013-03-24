@@ -23,5 +23,13 @@ class IndexController extends Zend_Controller_Action
         $this->view->form = $form;
     }
 
+    public function resultAction()
+    {
+        // action body
+    }
+
+
 }
+
+
 
