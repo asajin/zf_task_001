@@ -29,7 +29,8 @@ class Common_Parser_Csv
     }
 
     /**
-     * Parser process
+     * Parser process - read csv file, check if format is ok, 
+     * split csv file into header and content, content result order by second column
      */
     public function process()
     {

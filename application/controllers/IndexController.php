@@ -30,7 +30,8 @@ class IndexController extends Zend_Controller_Action
     }
 
     /**
-     * result action - validate upload form request data and show email
+     * result action - validate upload form request data and show email 
+     * and parsed file content ordered by second column
      */
     public function resultAction()
     {
