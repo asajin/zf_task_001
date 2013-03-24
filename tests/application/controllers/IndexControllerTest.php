@@ -20,7 +20,7 @@ class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
         $this->assertModule($urlParams['module']);
         $this->assertController($urlParams['controller']);
         $this->assertAction($urlParams['action']);
-        $this->assertQueryContentContains("div#welcome h3", "This is your project's main page");
+        $this->assertQueryContentContains("div#view-content h1", "Import form");
     }
 
     public function testResultAction()
@@ -33,11 +33,8 @@ class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
         // assertions
         $this->assertModule($urlParams['module']);
         $this->assertController($urlParams['controller']);
-        $this->assertAction($urlParams['action']);
-        $this->assertQueryContentContains(
-            'div#view-content p',
-            'View script for controller <b>' . $params['controller'] . '</b> and script/action name <b>' . $params['action'] . '</b>'
-            );
+        $this->assertAction('index');
+        $this->assertQueryContentContains('div#view-content h1','Import form');
     }
 
 
