@@ -13,7 +13,8 @@ class Application_Form_Import extends Zend_Form
     {
         $this->setMethod('post');
         $this->setAttrib('enctype', 'multipart/form-data');
-        
+
+        //input text for email field
         $this->addElement('text', 'email', array(
             'label'      => 'Your email address:',
             'required'   => true,
@@ -22,7 +23,8 @@ class Application_Form_Import extends Zend_Form
                 'EmailAddress',
             )
         ));
-        
+
+        //input file for upload file field
         $this->addElement('file', 'file', array(
             'label'      => 'File to import:',
             'required'   => true,
@@ -32,7 +34,7 @@ class Application_Form_Import extends Zend_Form
                 'Extension' => 'csv',
             )
         ));
-        
+
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
             'label'    => 'Submit',
