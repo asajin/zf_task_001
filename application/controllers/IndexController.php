@@ -40,9 +40,28 @@ class IndexController extends Zend_Controller_Action
 
         if ($this->getRequest()->isPost()) {
             if ($form->isValid($request->getPost())) {
+                try
+                {
+                    $form->file->receive();
+                }
+                catch (Zend_File_Transfer_Exception $e)
+                {
+                    throw new Exception('Unable to recieve : '.$e->getMessage());
+                }
 
-                $this->view->email  = $form->getValue('email');
+                Zend_Loader_Autoloader::getInstance()->registerNamespace('Common_');
 
+                $parser = new Common_Parser_Csv($form->file->getFileName());
+                list($header, $list) = $parser->process();
+                if($parser->isValid()) {
+                    $parser->delete();
+
+                    $this->view->email  = $form->getValue('email');
+                    $this->view->list   = $list;
+
+                } else {
+                    throw new Exception($parser->getError());
+                }
             } else {
                 $this->_forward('index');
             }
