@@ -46,14 +46,17 @@ class IndexController extends Zend_Controller_Action
                 }
                 catch (Zend_File_Transfer_Exception $e)
                 {
-                    throw new Exception('Unable to recieve : '.$e->getMessage());
+                    throw new Exception(
+                        'Unable to recieve : '.$e->getMessage()
+                    );
                 }
 
-                Zend_Loader_Autoloader::getInstance()->registerNamespace('Common_');
+                Zend_Loader_Autoloader::getInstance()
+                        ->registerNamespace('Common_');
 
                 $parser = new Common_Parser_Csv($form->file->getFileName());
-                list($header, $list) = $parser->process();
-                if($parser->isValid()) {
+                $list = $parser->process();
+                if ($parser->isValid()) {
                     $parser->delete();
 
                     $this->view->email  = $form->getValue('email');

@@ -9,14 +9,14 @@ class Common_Parser_Csv
      * 
      * @var string
      */
-    private $file = '';
+    private $_file = '';
     
     /**
      * Error message of parser process, in the case of success empty
      * 
      * @var string
      */
-    private $error = '';
+    private $_error = '';
     
     /**
      * Create parser object
@@ -25,7 +25,7 @@ class Common_Parser_Csv
      */
     public function __construct($file)
     {
-        $this->file = $file;
+        $this->_file = $file;
     }
 
     /**
@@ -35,17 +35,17 @@ class Common_Parser_Csv
     {
         $header = array();
         $list   = array();
-        if(file_exists($this->file)) {
-            if (($handle = fopen($this->file, "r")) !== FALSE) {
+        if (file_exists($this->_file)) {
+            if (($handle = fopen($this->_file, "r")) !== FALSE) {
                 while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-                    if(count($data) == 3) {
-                        if(empty($header)) {
+                    if (count($data) == 3) {
+                        if (empty($header)) {
                             $header = $data;
                         } else {
                             $list[$data[1]] = $data;
                         }
                     } else {
-                        $this->error = 'Not accepted format of file';
+                        $this->_error = 'Not accepted format of file';
                     }
                 }
                 ksort($list);
@@ -53,7 +53,7 @@ class Common_Parser_Csv
             }
         }
         
-        return array($header, $list);
+        return $list;
     }
     
     /**
@@ -61,7 +61,7 @@ class Common_Parser_Csv
      */
     public function delete()
     {
-        unlink($this->file);
+        unlink($this->_file);
     }
     
     /**
@@ -71,7 +71,7 @@ class Common_Parser_Csv
      */
     public function isValid()
     {
-        return empty($this->error);
+        return empty($this->_error);
     }
     
     /**
@@ -81,7 +81,7 @@ class Common_Parser_Csv
      */
     public function getError()
     {
-        return $this->error;
+        return $this->_error;
     }
 
 
