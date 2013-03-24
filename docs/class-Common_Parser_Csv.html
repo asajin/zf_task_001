@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Common_Parser_Csv | zend_test2</title>
+
+	<script type="text/javascript" src="resources/combined.js?1208723450"></script>
+	<script type="text/javascript" src="elementlist.js?3484380101"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Application_Form_Import.html">Application_Form_Import</a></li>
+				<li><a href="class-Bootstrap.html">Bootstrap</a></li>
+				<li class="active"><a href="class-Common_Parser_Csv.html">Common_Parser_Csv</a></li>
+				<li><a href="class-ErrorController.html">ErrorController</a></li>
+				<li><a href="class-IndexController.html">IndexController</a></li>
+				<li><a href="class-IndexControllerTest.html">IndexControllerTest</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Common_Parser_Csv</h1>
+
+
+	<div class="description">
+	
+<p>Class parse input file</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+		<b>Located at</b> <a href="source-class-Common_Parser_Csv.html#2-89" title="Go to source code">library/Common/Parser/Csv.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Common_Parser_Csv.html#21-29" title="Go to source code">__construct</a>( <span>string <var>$file</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Create parser object</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Create parser object</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$file</var></dt>
+					<dd><code>string</code><br>$file</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="process" id="_process">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_process">#</a>
+		<code><a href="source-class-Common_Parser_Csv.html#31-58" title="Go to source code">process</a>( )</code>
+
+		<div class="description short">
+			
+<p>Parser process - read csv file, check if format is ok, split csv file into
+header and content, content result order by second column</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Parser process - read csv file, check if format is ok, split csv file into
+header and content, content result order by second column</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-Common_Parser_Csv.html#60-66" title="Go to source code">delete</a>( )</code>
+
+		<div class="description short">
+			
+<p>Delete parsed file</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Delete parsed file</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isValid" id="_isValid">
+
+		<td class="attributes"><code>
+			 public 
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isValid">#</a>
+		<code><a href="source-class-Common_Parser_Csv.html#68-76" title="Go to source code">isValid</a>( )</code>
+
+		<div class="description short">
+			
+<p>Check if during parsing no error</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Check if during parsing no error</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getError" id="_getError">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getError">#</a>
+		<code><a href="source-class-Common_Parser_Csv.html#78-86" title="Go to source code">getError</a>( )</code>
+
+		<div class="description short">
+			
+<p>Return error message of parser</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return error message of parser</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		zend_test2 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
